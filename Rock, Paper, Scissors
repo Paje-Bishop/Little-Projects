@@ -1,31 +1,35 @@
 import random
 
-options = ["rock", "paper", "scissors", "placeholder"]
+options = ["rock", "paper", "scissors", "rock"]
 positive = ["yes", "y", "sure", "of course", "you're on", "yes!", "sure!", "of course!", "you're on!"]
 negative = ["absolutely not", "absolutely not!", "no", "no!", "n", "no thank you", "no, thank you", "i don't want to"]
 
 def moreplay(againers):
-    while True:
-        if againers in positive:
-            answer = input("Rock, paper, scissors, shoot! ->")
-            rps(answer)
-        elif againers in negative:
-            print("Well shoot, you're no fun :(")
-            break
-                   
+  while True:
+    if againers in positive:
+      answer = input("Rock, paper, scissors, shoot! ->  ")
+      rps(answer)
+    elif againers in negative:
+        print("Well shoot, you're no fun :(")
+        break
+    else:
+      againers = input("Uhhhh...what..? Do you want to play again or not?  ->  ")
+    return False       
+            
+        
 def rps(ans):
-        comp = random.randint(0,2)
-        if ans == options[comp]:
-            print("It's a tie!")
-        elif ans == options[comp+1]:
-            print("Too bad, so sad!")
-        else:
-            print("Wow, you actually won...")
-        again = (input("wanna play again?  ->  ")).lower()
-        moreplay(again)
+  comp = random.randint(0,2)
+  print (f"{options[comp]}!")
+  if ans == options[comp]:
+    print("It's a tie!")
+  elif ans == options[comp-1]:
+    print("Too bad, so sad!")
+  else:
+    print("Wow, you actually won...")
+  again = (input("wanna play again?  ->  ")).lower()
+  moreplay(again)
         
-        
-        
+            
 answer = input("Rock, paper, scissors, shoot!  ->  ")
 answer.lower()
 rps(answer)
