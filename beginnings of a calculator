@@ -1,0 +1,31 @@
+def addition(arg):
+  addit = arg.split(" + ")
+  addito = []
+  for x in addit:
+    if x is not int:
+      break
+    elif x.isnumeric():
+      float(x)
+      addito.push(x)
+      answer = sum(addito)
+      
+def subtraction(arg):
+  subtr = arg.split(" - ")
+  subtro = []
+  for x in subtr:
+    if x is not int:
+      break
+    elif x.isnumeric():
+      float(x)
+      subtro.push(x)
+      answer = answer - x
+
+def multiplication(arg):
+  addit = arg.split(" * ")
+  addito = []
+  for x in addit:
+    if x is not int:
+      break
+    elif x.isnumeric():
+      float(x)
+      answer = answer * x
